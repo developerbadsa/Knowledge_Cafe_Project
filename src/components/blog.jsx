@@ -1,8 +1,13 @@
-const Blog = ({ data }) => {
-  console.log(data)
+
+
+const Blog = ({ data, handleBookmark }) => {
   const { cover, title, author, author_img, posted_date, reading_time, hashtags} = data;
+
+  
+
   return (
     <div>
+      
       <div className="my-20 border p-10">
         <img
           className=" mb-8 w-full"
@@ -19,7 +24,7 @@ const Blog = ({ data }) => {
           </div>
           <div className="flex items-center justify-between gap-2">
             <span>{reading_time} min read</span>
-            <button>
+            <button onClick={()=>handleBookmark(title)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
