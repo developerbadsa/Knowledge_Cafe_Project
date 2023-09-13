@@ -3,6 +3,7 @@ import './App.css'
 import Blogs from './components/blogs'
 import Bookmark from './components/bookmarkBar'
 import SpendTime from './components/spendTime';
+import Header from './components/Header'
 
 
 
@@ -17,15 +18,18 @@ function App() {
   }
 
   return (
-    <div className='grid grid-cols-3'>
+   <>
+   <Header></Header>
+   <div className='grid grid-cols-3'>
       <div className='col-span-2'>
         <Blogs handleBookmark={handleBookmark}></Blogs>
       </div>
-      <div>
+      <div className='my-12'>
         <SpendTime data={spendTime}></SpendTime>
         <Bookmark data={bookmark}></Bookmark>
       </div>
     </div>
+   </>
   )
 }
 
