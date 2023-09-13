@@ -8,7 +8,7 @@ const Blog = ({ data, handleBookmark }) => {
   return (
     <div>
       
-      <div className="my-20 border p-10">
+      <div className="my-2 p-10">
         <img
           className=" mb-8 w-full"
           src={cover}
@@ -24,7 +24,7 @@ const Blog = ({ data, handleBookmark }) => {
           </div>
           <div className="flex items-center justify-between gap-2">
             <span>{reading_time} min read</span>
-            <button onClick={()=>handleBookmark(title)}>
+            <button onClick={()=>handleBookmark(data)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"

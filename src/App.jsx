@@ -2,15 +2,18 @@ import { useState } from 'react'
 import './App.css'
 import Blogs from './components/blogs'
 import Bookmark from './components/bookmarkBar'
+import SpendTime from './components/spendTime';
+
 
 
 function App() {
 
   const [bookmark, setBookmark] = useState([]);
+  const [spendTime, setSpendTime] = useState(0)
 
-  const handleBookmark = (data)=>{
-    //console.log(data)
-    setBookmark([...bookmark, data])
+  const handleBookmark = ({title, reading_time})=>{
+    setBookmark([...bookmark, title])
+    setSpendTime(spendTime+reading_time)
   }
 
   return (
@@ -19,6 +22,7 @@ function App() {
         <Blogs handleBookmark={handleBookmark}></Blogs>
       </div>
       <div>
+        <SpendTime data={spendTime}></SpendTime>
         <Bookmark data={bookmark}></Bookmark>
       </div>
     </div>
