@@ -4,7 +4,7 @@ import Blog from "./blog";
 
 const Bookmark = ({data})=>{
 
-
+    
    return (
 
     <div className="px-8 py-8 mx-2 mt-14  bg-slate-200">
@@ -18,8 +18,8 @@ const Bookmark = ({data})=>{
                     return (
                         <li className="text-xl font-medium bg-white text-left my-8 px-8 py-4" key={index}>
                         
-                       {index+1} . {bookmark}
-                        
+                       
+                        { bookmark.title? index+1+'.':'' }{bookmark.title}
                         </li>
                     )
                 })

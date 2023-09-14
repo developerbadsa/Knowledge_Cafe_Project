@@ -1,6 +1,6 @@
 
 
-const Blog = ({ data, handleBookmark }) => {
+const Blog = ({ data, handleBookmark, handleMarkBtn }) => {
   const { cover, title, author, author_img, posted_date, reading_time, hashtags} = data;
 
   
@@ -42,7 +42,7 @@ const Blog = ({ data, handleBookmark }) => {
         <p className="text-left mt-5">
           Has Tags
         </p>
-        <div className="text-left mt-2 "><button className="underline text-blue-500" >Mark as Read</button></div>
+        <div onClick={()=> handleMarkBtn(data)} className="text-left mt-2 "><button className="underline text-blue-500" >Mark as Read</button></div>
       </div>
     </div>
   );

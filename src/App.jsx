@@ -12,9 +12,21 @@ function App() {
   const [bookmark, setBookmark] = useState([]);
   const [spendTime, setSpendTime] = useState(0)
 
-  const handleBookmark = ({title, reading_time})=>{
-    setBookmark([...bookmark, title])
-    setSpendTime(spendTime+reading_time)
+  const handleBookmark = (data)=>{
+    setBookmark([...bookmark, data])
+  }
+
+  const handleMarkBtn = ({reading_time, id})=>{
+console.log(id, reading_time)
+    
+
+    let addedMark = bookmark.filter(newData => newData.id !== id);
+    
+    
+    
+    // console.log(addedMark)
+        setBookmark(addedMark)
+       setSpendTime(spendTime+reading_time);
   }
 
   return (
@@ -22,7 +34,7 @@ function App() {
    <Header></Header>
    <div className='grid grid-cols-3'>
       <div className='col-span-2'>
-        <Blogs handleBookmark={handleBookmark}></Blogs>
+        <Blogs handleMarkBtn={handleMarkBtn} handleBookmark={handleBookmark}></Blogs>
       </div>
       <div className='my-12'>
         <SpendTime data={spendTime}></SpendTime>
